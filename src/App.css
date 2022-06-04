@@ -1,0 +1,85 @@
+.container {
+  width: 500px;
+  height: 700px;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-el {
+  padding-left: 30px;
+  padding-top: 35px;
+}
+
+.text-el h1 {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.day-el {
+  font-size: 20px;
+  color: gray;
+  margin-top: 5px;
+}
+
+.todo-el {
+  color: rgb(32 201 151);
+  font-weight: bold;
+  font-size: 17px;
+  padding-top: 15px;
+}
+
+.line-el{
+  background-color: #E9ECEF;
+  border: none;
+  height: 1px;
+  margin-bottom: 0;
+}
+
+.list-el {
+  flex: 1;
+  padding: 20px 32px;
+  padding-bottom: 48px;
+  overflow-y: auto;
+}
+
+li {
+  padding-bottom: 20px;
+  list-style: none;
+}
+
+.item-el{
+  font-size: 20px;
+}
+
+.checked {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid #ced4da;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.add-el {
+  display: flex; 
+  padding-top: 20px;
+}
+
+.unchecked {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid #ced4da;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
