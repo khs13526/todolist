@@ -1,14 +1,26 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { MdDone, MdDelete } from 'react-icons/md';
-import nanoid from 'nanoid'
+import data from "./data";
 
 export default function Items(props) {
 
+    const [todoData, setTodoData] = useState(props)
+
+
+    function toggle() {
+        setTodoData( {...todoData, done : !todoData.done} )
+
+        // console.log(newArray)
+    }
+    useEffect(() => {
+
+        console.log('props', props)
+    }, [props])
 
     return (
         <div className="add-el">
-            {props.done ? <span className="checked" onClick={props.toggle}><MdDone /></span> : <span className="unchecked" onClick={props.toggle}></span> }
-            {props.text}
+            {todoData.done ? <span className="checked" onClick={() => toggle()}><MdDone /></span> : <span className="unchecked" onClick={() => toggle()}></span> }
+            {todoData.text} {todoData.done}
         </div>
     )
   }
