@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import Items from "./Items";
 import data from "./data";
-
 export default function List() {
 
 

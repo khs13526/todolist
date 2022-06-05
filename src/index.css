@@ -5,9 +5,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 html {
   height: 100vh;
+  
 }
 

@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import { MdDone, MdDelete } from 'react-icons/md';
-import data from "./data";
 
 export default function Items(props) {
 
