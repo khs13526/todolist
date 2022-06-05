@@ -17,9 +17,14 @@ export default function Items(props) {
     }, [props])
 
     return (
-        <div className="add-el">
+        <div className="items-container">
+         <div className={todoData.done ? "done-el" : "undone-el"}>
             {todoData.done ? <span className="checked" onClick={() => toggle()}><MdDone /></span> : <span className="unchecked" onClick={() => toggle()}></span> }
-            {todoData.text} {todoData.done}
+            {todoData.text}
+         </div>    
+            <div className="dlt-btn">
+                <MdDelete/>
+            </div>
         </div>
     )
   }

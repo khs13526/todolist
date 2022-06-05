@@ -55,10 +55,11 @@ li {
 }
 
 .checked {
+  color: #63e6be;
   width: 32px;
   height: 32px;
   border-radius: 16px;
-  border: 1px solid #ced4da;
+  border: 1px solid #63e6be;
   font-size: 24px;
   display: flex;
   align-items: center;
@@ -67,9 +68,39 @@ li {
   cursor: pointer;
 }
 
-.add-el {
+.items-container {
+  display: flex;
+}
+.items-container:hover .dlt-btn {
+  display: block;
+}
+
+.done-el {
+  color: #ced4da;
+  display: flex;
+  padding-top: 20px;
+  margin-right: auto;
+}
+
+.undone-el {
   display: flex; 
   padding-top: 20px;
+  margin-right: auto;
+}
+
+.dlt-btn {
+  margin-top: 12px;
+  color: #dee2e6;
+  font-size: 24px;
+  cursor: pointer;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.dlt-btn:hover {
+  color: #ff6b6b;
 }
 
 .unchecked {
