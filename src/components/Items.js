@@ -3,7 +3,7 @@ import { MdDone, MdDelete } from 'react-icons/md';
 import { useRecoilState } from "recoil";
 import { listDataAtom } from "../recoilState/atoms";
 
-export default function Items(props) {
+function Items(props) {
 
     const [listData, setListData] = useRecoilState(listDataAtom)
 
@@ -17,9 +17,11 @@ export default function Items(props) {
             }
         }))
     }
-    // useEffect(() => {
-    //     console.log('props', listData[props.i].text)
-    // }, [props])
+
+    function onDelete() {
+        console.log("Clicked!")
+        setListData(listData.filter(it => it.id !==listData[props.i].id))
+    }
 
     return (
         <div className="items-container">
@@ -27,9 +29,11 @@ export default function Items(props) {
             {listData[props.i].done ? <span className="checked" onClick={() => toggle()}><MdDone /></span> : <span className="unchecked" onClick={() => toggle()}></span> }
             {listData[props.i].text}
          </div>    
-            <div className="dlt-btn">
+            <div className="dlt-btn" onClick={onDelete}>
                 <MdDelete/>
             </div>
         </div>
     )
   }
+
+  export default React.memo(Items)
