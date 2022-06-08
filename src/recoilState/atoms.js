@@ -26,3 +26,8 @@ export const listDataAtom = atom({
 
     ]
 }) 
+
+export const localListaDataAtom = atom({
+  key: "localListDataAtom",
+  default : false
+})

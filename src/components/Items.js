@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from "react";
 import { MdDone, MdDelete } from 'react-icons/md';
 import { useRecoilState } from "recoil";
-import { listDataAtom } from "../recoilState/atoms";
+import { listDataAtom, localListaDataAtom } from "../recoilState/atoms";
 
 function Items(props) {
 
     const [listData, setListData] = useRecoilState(listDataAtom)
+    const [localListaData, setLocalListData] = useRecoilState(localListaDataAtom)
 
 
     function toggle() {
