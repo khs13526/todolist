@@ -2,7 +2,7 @@ import { findAllByDisplayValue } from "@testing-library/react";
 import React, {useEffect, useRef, useState} from "react";
 import { MdAdd } from 'react-icons/md';
 import { useRecoilState } from "recoil";
-import { listDataAtom, localListaDataAtom } from "../recoilState/atoms";
+import { listDataAtom, localListaDataAtom, nextIdAtom } from "../recoilState/atoms";
 
 function Create() {
 
@@ -10,9 +10,20 @@ function Create() {
     const [localListaData, setLocalListData] = useRecoilState(localListaDataAtom)
     const [open, setOpen] = useState(false)
     const [inputValue, setInputValue] = useState("")
-    let nextId = useRef(5)
     const firstrun = useRef(false)
-    
+
+     function getId() {
+          if(localStorage.getItem("id") !== null){
+               return JSON.parse(localStorage.getItem("id"))
+          }
+          return 1
+     }
+
+     function setId() {
+          return localStorage.setItem("id", JSON.stringify(getId()+1))
+     }
+
+
      function btnToggle() {
         setOpen(prevOpen => !prevOpen)
      }
@@ -20,12 +31,12 @@ function Create() {
      function onSubmit(e) {
           e.preventDefault();
               setListData(prevData => [...prevData, {
-                   id: nextId.current,
+                   id: getId(),
                    text: inputValue,
                    done: false
               }])
               setOpen(false)
-              nextId.current += 1
+              setId()
      }
           
      function onChange(e) {

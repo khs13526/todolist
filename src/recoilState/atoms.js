@@ -31,3 +31,8 @@ export const localListaDataAtom = atom({
   key: "localListDataAtom",
   default : false
 })
+
+export const nextIdAtom = atom({
+  key: "nextIdAtom",
+  default : 5
+})

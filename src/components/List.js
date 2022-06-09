@@ -8,9 +8,11 @@ const [listData, setListData] = useRecoilState(listDataAtom)
 const [localListaData, setLocalListData] = useRecoilState(localListaDataAtom)
 
 useEffect(() => {
-
+    if(localStorage.getItem("listData") !== null){
     setListData(JSON.parse(localStorage.getItem("listData")))
-
+    } else {
+    setListData([])    
+    }
 },[localListaData]) 
 
     return (

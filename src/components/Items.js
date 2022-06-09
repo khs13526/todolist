@@ -21,7 +21,7 @@ function Items(props) {
 
     function onDelete() {
         console.log("Clicked!")
-        setListData(listData.filter(it => it.id !==listData[props.i].id))
+        setListData(listData.filter(it => it.id !== listData[props.i].id))
     }
 
     return (
