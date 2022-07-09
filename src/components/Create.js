@@ -1,4 +1,5 @@
 import { findAllByDisplayValue } from "@testing-library/react";
+import axios from "axios";
 import React, {useEffect, useRef, useState} from "react";
 import { MdAdd } from 'react-icons/md';
 import { useRecoilState } from "recoil";
@@ -16,7 +17,7 @@ function Create() {
           if(localStorage.getItem("id") !== null){
                return JSON.parse(localStorage.getItem("id"))
           }
-          return 1
+          return 5
      }
 
      function setId() {
@@ -37,6 +38,10 @@ function Create() {
               }])
               setOpen(false)
               setId()
+          // axios.post("https://crudcrud.com/api/d8e0fc9bb5cd4ef6bfb69747844e4de7/listdata/")
+          // .then(res => console.log(res))
+          // .catch(error => console.log(error))
+          // .then()
      }
           
      function onChange(e) {
